@@ -1,0 +1,724 @@
+/* Universal selector - applies to all elements */
+* {
+  margin: 0; /* Remove default margin from all elements */
+  padding: 0; /* Remove default padding from all elements */
+  box-sizing: border-box; /* Include padding and border in element's total width/height */
+}
+
+/* Body element - main container for entire page */
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif; /* Set font family with fallbacks */
+  background-color: #f5f5f5; /* Light gray background color */
+}
+
+/* Notification Bar Styles - Top promotional banner */
+.notification-bar {
+  background-color: #1a1a1a; /* Dark black background */
+  color: white; /* White text color */
+  padding: 12px 20px; /* 12px top/bottom, 20px left/right padding */
+  display: flex; /* Use flexbox layout for horizontal alignment */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  gap: 15px; /* 15px space between child elements */
+  font-size: 14px; /* Set font size to 14 pixels */
+}
+
+/* Link inside notification bar */
+.notification-bar a {
+  color: white; /* White text color */
+  text-decoration: none; /* Remove underline from link */
+  display: flex; /* Use flexbox for inline elements */
+  align-items: center; /* Center items vertically */
+  gap: 5px; /* 5px space between text and arrow */
+  margin-left: 10px; /* 10px space from previous element */
+  border-bottom: 1px solid white; /* White underline effect */
+}
+
+/* Navigation Bar Styles - Main header navigation */
+.navigation-bar {
+  background-color: white; /* White background */
+  padding: 20px 40px; /* 20px top/bottom, 40px left/right padding */
+  display: flex; /* Use flexbox for horizontal layout */
+  justify-content: space-between; /* Space items evenly - logo left, menu center, icons right */
+  align-items: center; /* Center items vertically */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow: 0 horizontal, 2px vertical, 5px blur, 10% black */
+}
+
+/* Left section of navigation bar */
+.nav-left {
+  display: flex; /* Use flexbox layout */
+  align-items: center; /* Center items vertically */
+  gap: 20px; /* 20px space between toggle and brand name */
+}
+
+/* Brand name styling - targets last span in nav-left */
+.nav-left span:last-child {
+  font-size: 20px; /* Set font size to 20 pixels */
+  font-weight: 600; /* Semi-bold font weight */
+}
+
+/* Mobile menu toggle button */
+.toggle {
+  cursor: pointer; /* Show hand pointer on hover */
+  display: none; /* Hidden by default on desktop */
+}
+
+/* Middle navigation section - main menu */
+.nav-middle ul {
+  list-style: none; /* Remove bullet points from list */
+  display: flex; /* Use flexbox for horizontal menu */
+  gap: 40px; /* 40px space between menu items */
+}
+
+/* Navigation menu links */
+.nav-middle a {
+  text-decoration: none; /* Remove underline */
+  color: #333; /* Dark gray text color */
+  font-size: 15px; /* Set font size */
+  transition: color 0.3s; /* Smooth color change over 0.3 seconds on hover */
+}
+
+/* Navigation link hover effect */
+.nav-middle a:hover {
+  color: #666; /* Change to lighter gray when hovering */
+}
+
+/* Right section of navigation - action icons */
+.nav-right {
+  display: flex; /* Use flexbox layout */
+  gap: 20px; /* 20px space between icons */
+  align-items: center; /* Center icons vertically */
+}
+
+/* Icon sizing in navigation */
+.nav-right img {
+  width: 24px; /* Set width to 24 pixels */
+  height: 24px; /* Set height to 24 pixels */
+  cursor: pointer; /* Show hand pointer on hover */
+}
+
+/* Main content container */
+.main-container {
+  max-width: 1200px; /* Maximum width of 1200 pixels */
+  margin: 40px auto; /* 40px top/bottom margin, auto centers horizontally */
+  padding: 0 20px; /* 0 top/bottom, 20px left/right padding */
+}
+
+/* Page title styling */
+.page-title {
+  text-align: center; /* Center text horizontally */
+  font-size: 32px; /* Large font size */
+  font-weight: 600; /* Semi-bold font weight */
+  margin-bottom: 40px; /* 40px space below title */
+  color: #1a1a1a; /* Dark black color */
+}
+
+/* Account layout - sidebar and content area */
+.account-layout {
+  display: grid; /* Use CSS Grid layout */
+  grid-template-columns: 250px 1fr; /* Sidebar 250px, content takes remaining space */
+  gap: 30px; /* 30px space between columns */
+  margin-bottom: 60px; /* 60px space below layout */
+}
+
+/* Sidebar Styles */
+.sidebar {
+  background-color: #f0f0f0; /* Light gray background */
+  padding: 30px; /* 30px padding on all sides */
+  border-radius: 8px; /* 8px rounded corners */
+  height: fit-content; /* Height adjusts to content */
+}
+
+/* Profile section in sidebar */
+.profile-section {
+  text-align: center; /* Center all text */
+  margin-bottom: 30px; /* 30px space below section */
+  padding-bottom: 20px; /* 20px space inside bottom */
+  border-bottom: 1px solid #ddd; /* Light gray bottom border */
+}
+
+/* Profile icon circle */
+.profile-icon {
+  width: 80px; /* 80px width */
+  height: 80px; /* 80px height */
+  background-color: #1a1a1a; /* Dark black background */
+  border-radius: 50%; /* Make it a perfect circle */
+  margin: 0 auto 15px; /* 0 top/bottom, auto centers horizontally, 15px bottom margin */
+  display: flex; /* Use flexbox for centering */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  color: white; /* White text color */
+  font-size: 32px; /* Large font for initial letter */
+  font-weight: 600; /* Semi-bold */
+  position: relative; /* Allows absolute positioning of child elements */
+}
+
+/* Edit icon on profile picture */
+.edit-icon {
+  position: absolute; /* Position relative to profile-icon */
+  bottom: 0; /* Stick to bottom */
+  right: 0; /* Stick to right */
+  width: 28px; /* 28px width */
+  height: 28px; /* 28px height */
+  background-color: white; /* White background */
+  border-radius: 50%; /* Make it a circle */
+  display: flex; /* Use flexbox for centering */
+  align-items: center; /* Center icon vertically */
+  justify-content: center; /* Center icon horizontally */
+  border: 2px solid #1a1a1a; /* Dark border around icon */
+}
+
+/* Profile name text */
+.profile-name {
+  font-size: 18px; /* Font size */
+  font-weight: 600; /* Semi-bold */
+  color: #1a1a1a; /* Dark color */
+}
+
+/* Sidebar menu list */
+.sidebar-menu {
+  list-style: none; /* Remove bullet points */
+}
+
+/* Sidebar menu list items */
+.sidebar-menu li {
+  margin-bottom: 5px; /* 5px space below each item */
+}
+
+/* Sidebar menu links */
+.sidebar-menu a {
+  display: block; /* Make link take full width */
+  padding: 12px 15px; /* 12px top/bottom, 15px left/right padding */
+  text-decoration: none; /* Remove underline */
+  color: #333; /* Dark gray text */
+  border-radius: 4px; /* 4px rounded corners */
+  transition: all 0.3s; /* Smooth transition for all properties */
+  cursor: pointer; /* Show hand pointer */
+}
+
+/* Sidebar menu link hover and active state */
+.sidebar-menu a:hover,
+.sidebar-menu a.active {
+  background-color: #1a1a1a; /* Dark background on hover/active */
+  color: white; /* White text on hover/active */
+}
+
+/* Content Area Styles */
+.content-area {
+  background-color: white; /* White background */
+  padding: 40px; /* 40px padding on all sides */
+  border-radius: 8px; /* 8px rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow effect */
+}
+
+/* Content sections - hidden by default */
+.content-section {
+  display: none; /* Hide all sections initially */
+}
+
+/* Active content section - visible */
+.content-section.active {
+  display: block; /* Show the active section */
+}
+
+/* Section title */
+.section-title {
+  font-size: 22px; /* Font size */
+  font-weight: 600; /* Semi-bold */
+  margin-bottom: 25px; /* 25px space below */
+  color: #1a1a1a; /* Dark color */
+  padding-bottom: 15px; /* 15px space inside bottom */
+  border-bottom: 2px solid #f0f0f0; /* Light gray bottom border */
+}
+
+/* Form group - container for label and input */
+.form-group {
+  margin-bottom: 20px; /* 20px space below each group */
+}
+
+/* Form labels */
+.form-group label {
+  display: block; /* Make label take full width */
+  margin-bottom: 8px; /* 8px space below label */
+  font-size: 14px; /* Font size */
+  font-weight: 500; /* Medium weight */
+  color: #333; /* Dark gray color */
+}
+
+/* Required field asterisk */
+.form-group label span {
+  color: red; /* Red color for asterisk */
+}
+
+/* Input fields, textarea, and select */
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%; /* Full width */
+  padding: 12px 15px; /* 12px top/bottom, 15px left/right padding */
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 4px; /* 4px rounded corners */
+  font-size: 14px; /* Font size */
+  transition: border-color 0.3s; /* Smooth border color change */
+}
+
+/* Input focus state - when user clicks on input */
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none; /* Remove default blue outline */
+  border-color: #1a1a1a; /* Change border to dark color when focused */
+}
+
+/* Small text under inputs */
+.form-group small {
+  display: block; /* Make it take full width */
+  margin-top: 5px; /* 5px space above */
+  font-size: 12px; /* Small font size */
+  color: #666; /* Gray color */
+}
+
+/* Form row - two inputs side by side */
+.form-row {
+  display: grid; /* Use CSS Grid */
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 20px; /* 20px space between columns */
+}
+
+/* Button styling */
+.btn {
+  padding: 12px 30px; /* 12px top/bottom, 30px left/right padding */
+  background-color: #1a1a1a; /* Dark background */
+  color: white; /* White text */
+  border: none; /* Remove default border */
+  border-radius: 4px; /* 4px rounded corners */
+  cursor: pointer; /* Show hand pointer */
+  font-size: 15px; /* Font size */
+  font-weight: 500; /* Medium weight */
+  transition: background-color 0.3s; /* Smooth background color change */
+}
+
+/* Button hover effect */
+.btn:hover {
+  background-color: #333; /* Lighter black on hover */
+}
+
+/* Order card container */
+.order-card {
+  border: 1px solid #e0e0e0; /* Light gray border */
+  border-radius: 8px; /* 8px rounded corners */
+  padding: 20px; /* 20px padding on all sides */
+  margin-bottom: 20px; /* 20px space below each card */
+}
+
+/* Order card header */
+.order-header {
+  display: flex; /* Use flexbox */
+  justify-content: space-between; /* Space items to edges */
+  align-items: center; /* Center items vertically */
+  margin-bottom: 15px; /* 15px space below */
+  padding-bottom: 15px; /* 15px space inside bottom */
+  border-bottom: 1px solid #f0f0f0; /* Light gray divider */
+}
+
+/* Order number text */
+.order-number {
+  font-weight: 600; /* Semi-bold */
+  font-size: 16px; /* Font size */
+}
+
+/* Order status badge */
+.order-status {
+  padding: 6px 12px; /* 6px top/bottom, 12px left/right padding */
+  border-radius: 20px; /* Very rounded corners for pill shape */
+  font-size: 13px; /* Font size */
+  font-weight: 500; /* Medium weight */
+}
+
+/* Delivered status - green */
+.status-delivered {
+  background-color: #e8f5e9; /* Light green background */
+  color: #2e7d32; /* Dark green text */
+}
+
+/* Processing status - orange */
+.status-processing {
+  background-color: #fff3e0; /* Light orange background */
+  color: #ef6c00; /* Dark orange text */
+}
+
+/* Shipped status - blue */
+.status-shipped {
+  background-color: #e3f2fd; /* Light blue background */
+  color: #1565c0; /* Dark blue text */
+}
+
+/* Order details container */
+.order-details {
+  display: grid; /* Use CSS Grid */
+  gap: 10px; /* 10px space between rows */
+  font-size: 14px; /* Font size */
+  color: #666; /* Gray color */
+}
+
+/* Order detail row - item name and price */
+.order-detail-row {
+  display: flex; /* Use flexbox */
+  justify-content: space-between; /* Space items to edges */
+}
+
+/* Order total row - bold */
+.order-total {
+  font-weight: 600; /* Semi-bold */
+  color: #1a1a1a; /* Dark color */
+  font-size: 16px; /* Larger font */
+}
+
+/* Address grid - multiple address cards */
+.address-grid {
+  display: grid; /* Use CSS Grid */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(300px, 1fr)
+  ); /* Responsive columns, min 300px */
+  gap: 20px; /* 20px space between cards */
+  margin-bottom: 20px; /* 20px space below grid */
+}
+
+/* Address card */
+.address-card {
+  border: 1px solid #e0e0e0; /* Light gray border */
+  border-radius: 8px; /* 8px rounded corners */
+  padding: 20px; /* 20px padding */
+  position: relative; /* Allows absolute positioning of badge */
+}
+
+/* Default address card - darker border */
+.address-card.default {
+  border: 2px solid #1a1a1a; /* Dark border for default address */
+}
+
+/* Default badge */
+.default-badge {
+  position: absolute; /* Position relative to address-card */
+  top: 10px; /* 10px from top */
+  right: 10px; /* 10px from right */
+  background-color: #1a1a1a; /* Dark background */
+  color: white; /* White text */
+  padding: 4px 10px; /* 4px top/bottom, 10px left/right padding */
+  border-radius: 12px; /* Rounded pill shape */
+  font-size: 11px; /* Small font */
+  font-weight: 600; /* Semi-bold */
+}
+
+/* Address name */
+.address-name {
+  font-weight: 600; /* Semi-bold */
+  font-size: 16px; /* Font size */
+  margin-bottom: 10px; /* 10px space below */
+}
+
+/* Address details text */
+.address-details {
+  font-size: 14px; /* Font size */
+  color: #666; /* Gray color */
+  line-height: 1.6; /* Line height for better readability */
+  margin-bottom: 15px; /* 15px space below */
+}
+
+/* Address action buttons container */
+.address-actions {
+  display: flex; /* Use flexbox */
+  gap: 15px; /* 15px space between buttons */
+}
+
+/* Small button style */
+.btn-small {
+  padding: 8px 16px; /* 8px top/bottom, 16px left/right padding */
+  font-size: 13px; /* Font size */
+  background-color: transparent; /* No background */
+  color: #1a1a1a; /* Dark text */
+  border: 1px solid #1a1a1a; /* Dark border */
+}
+
+/* Small button hover */
+.btn-small:hover {
+  background-color: #1a1a1a; /* Dark background on hover */
+  color: white; /* White text on hover */
+}
+
+/* Add address button */
+.add-address-btn {
+  display: inline-flex; /* Inline flexbox for icon and text */
+  align-items: center; /* Center items vertically */
+  gap: 8px; /* 8px space between icon and text */
+  padding: 12px 24px; /* 12px top/bottom, 24px left/right padding */
+  background-color: #1a1a1a; /* Dark background */
+  color: white; /* White text */
+  border: none; /* No border */
+  border-radius: 4px; /* 4px rounded corners */
+  cursor: pointer; /* Show hand pointer */
+  font-size: 14px; /* Font size */
+  font-weight: 500; /* Medium weight */
+  transition: background-color 0.3s; /* Smooth background change */
+}
+
+/* Add address button hover */
+.add-address-btn:hover {
+  background-color: #333; /* Lighter black on hover */
+}
+
+/* Footer Styles - based on your new design */
+.footer {
+  background-color: #1a1a1a; /* Dark black background */
+  color: white; /* White text */
+  padding: 40px; /* 40px padding on all sides */
+  margin-top: 80px; /* 80px space above footer */
+}
+
+/* Footer content container */
+.footer-content {
+  max-width: 1200px; /* Maximum width */
+  margin: 0 auto; /* Center horizontally */
+}
+
+/* Top section of footer */
+.footer-top {
+  display: flex; /* Use flexbox */
+  justify-content: space-between; /* Space items to edges */
+  align-items: center; /* Center items vertically */
+  padding-bottom: 30px; /* 30px space inside bottom */
+  border-bottom: 1px solid #333; /* Dark gray divider line */
+  margin-bottom: 30px; /* 30px space below divider */
+}
+
+/* Footer brand section */
+.footer-brand {
+  display: flex; /* Use flexbox */
+  align-items: center; /* Center items vertically */
+  gap: 15px; /* 15px space between items */
+  font-size: 16px; /* Font size */
+}
+
+/* Footer brand name */
+.footer-brand-name {
+  font-weight: 600; /* Semi-bold */
+}
+
+/* Footer navigation menu */
+.footer-nav {
+  display: flex; /* Use flexbox */
+  gap: 40px; /* 40px space between items */
+  list-style: none; /* Remove bullet points */
+}
+
+/* Footer navigation links */
+.footer-nav a {
+  color: white; /* White text */
+  text-decoration: none; /* Remove underline */
+  font-size: 14px; /* Font size */
+  transition: opacity 0.3s; /* Smooth opacity change */
+}
+
+/* Footer link hover effect */
+.footer-nav a:hover {
+  opacity: 0.7; /* Semi-transparent on hover */
+}
+
+/* Bottom section of footer */
+.footer-bottom {
+  display: flex; /* Use flexbox */
+  justify-content: space-between; /* Space items to edges */
+  align-items: center; /* Center items vertically */
+}
+
+/* Left side of footer bottom */
+.footer-left {
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Stack items vertically */
+  gap: 10px; /* 10px space between items */
+}
+
+/* Copyright text */
+.copyright {
+  font-size: 13px; /* Font size */
+  color: #999; /* Light gray color */
+}
+
+/* Footer links (Privacy Policy, Terms) */
+.footer-links {
+  display: flex; /* Use flexbox */
+  gap: 20px; /* 20px space between links */
+  font-size: 13px; /* Font size */
+}
+
+/* Footer link styling */
+.footer-links a {
+  color: white; /* White text */
+  text-decoration: none; /* Remove underline */
+  transition: opacity 0.3s; /* Smooth opacity change */
+}
+
+/* Footer link hover */
+.footer-links a:hover {
+  opacity: 0.7; /* Semi-transparent on hover */
+}
+
+/* Social media icons container */
+.social-icons {
+  display: flex; /* Use flexbox */
+  gap: 15px; /* 15px space between icons */
+}
+
+/* Social icon styling */
+.social-icons svg {
+  cursor: pointer; /* Show hand pointer */
+  transition: opacity 0.3s; /* Smooth opacity change */
+}
+
+/* Social icon hover */
+.social-icons svg:hover {
+  opacity: 0.7; /* Semi-transparent on hover */
+}
+
+/* Modal (Popup) Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed position - stays in place when scrolling */
+  top: 0; /* Stick to top */
+  left: 0; /* Stick to left */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  z-index: 1000; /* Appears above all other content */
+  align-items: center; /* Center modal vertically */
+  justify-content: center; /* Center modal horizontally */
+}
+
+/* Active modal - visible */
+.modal.active {
+  display: flex; /* Show modal as flexbox */
+}
+
+/* Modal content box */
+.modal-content {
+  background-color: white; /* White background */
+  padding: 30px; /* 30px padding */
+  border-radius: 8px; /* 8px rounded corners */
+  max-width: 400px; /* Maximum width */
+  width: 90%; /* 90% of screen width on mobile */
+  text-align: center; /* Center all text */
+}
+
+/* Modal icon */
+.modal-icon {
+  width: 60px; /* 60px width */
+  height: 60px; /* 60px height */
+  margin: 0 auto 20px; /* Center and add bottom margin */
+  background-color: #fff3e0; /* Light orange background */
+  border-radius: 50%; /* Make it a circle */
+  display: flex; /* Use flexbox for centering */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  font-size: 30px; /* Large emoji size */
+}
+
+/* Modal title */
+.modal-title {
+  font-size: 20px; /* Font size */
+  font-weight: 600; /* Semi-bold */
+  margin-bottom: 10px; /* 10px space below */
+}
+
+/* Modal description text */
+.modal-text {
+  color: #666; /* Gray color */
+  margin-bottom: 25px; /* 25px space below */
+  font-size: 14px; /* Font size */
+}
+
+/* Modal action buttons container */
+.modal-actions {
+  display: flex; /* Use flexbox */
+  gap: 15px; /* 15px space between buttons */
+  justify-content: center; /* Center buttons */
+}
+
+/* Cancel button */
+.btn-cancel {
+  background-color: #f0f0f0; /* Light gray background */
+  color: #333; /* Dark text */
+}
+
+/* Cancel button hover */
+.btn-cancel:hover {
+  background-color: #e0e0e0; /* Slightly darker gray on hover */
+}
+
+/* Confirm logout button */
+.btn-confirm {
+  background-color: #d32f2f; /* Red background */
+}
+
+/* Confirm button hover */
+.btn-confirm:hover {
+  background-color: #b71c1c; /* Darker red on hover */
+}
+
+/* Responsive Design - Tablet and Mobile */
+@media (max-width: 768px) {
+  /* Show mobile menu toggle on screens narrower than 768px */
+  .toggle {
+    display: block;
+  }
+
+  /* Hide main navigation menu on mobile */
+  .nav-middle {
+    display: none;
+  }
+
+  /* Hide some icons on mobile */
+  .hide-mobile {
+    display: none;
+  }
+
+  /* Single column layout on mobile */
+  .account-layout {
+    grid-template-columns: 1fr; /* One column instead of two */
+  }
+
+  /* Sidebar appears after content on mobile */
+  .sidebar {
+    order: 2; /* Move to second position */
+  }
+
+  /* Content appears first on mobile */
+  .content-area {
+    order: 1; /* Move to first position */
+  }
+
+  /* Single column for form rows on mobile */
+  .form-row {
+    grid-template-columns: 1fr; /* One column */
+  }
+
+  /* Single column for address grid on mobile */
+  .address-grid {
+    grid-template-columns: 1fr; /* One column */
+  }
+
+  /* Stack footer items vertically on mobile */
+  .footer-top,
+  .footer-bottom {
+    flex-direction: column; /* Change from row to column */
+    gap: 20px; /* 20px space between items */
+    text-align: center; /* Center text */
+  }
+
+  /* Stack footer navigation vertically */
+  .footer-nav {
+    flex-direction: column; /* Change from row to column */
+    gap: 15px; /* 15px space between items */
+  }
+}
