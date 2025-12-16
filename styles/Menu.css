@@ -1,4 +1,3 @@
-/* --- Container width 720px --- */
 .mobile-menu-container {
     width: 400px;
     margin: 0 auto;
@@ -10,7 +9,6 @@
     flex-direction: column;
 }
 
-/* --- Header --- */
 .menu-header {
     display: flex;
     gap: 18em;
@@ -42,7 +40,6 @@ background-color: #cacaca;
 }
 
 
-/* --- Search bar --- */
 .search-box {
     margin-top: 20px;
     display: flex;
@@ -65,7 +62,6 @@ background-color: #cacaca;
     color: #333;
 }
 
-/* --- Main List --- */
 .menu-list,
 .menu-extra {
     list-style: none;
@@ -82,19 +78,18 @@ background-color: #cacaca;
     border-bottom: 1px solid #e5e5e5;
 }
 
-/* Make the last item have no border */
 .menu-extra li:last-child {
     border-bottom: none;
 }
 
-/* --- Extra section spacing --- */
+
 .menu-extra {
     margin-top: auto;
     margin-bottom: 30px;
     color: #777;
 }
 
-/* --- Sign Up Button --- */
+
 .signup-btn {
     background: #111416;
     color: white;

@@ -124,7 +124,6 @@
             border-radius: 4px;
         }
 
-        /* Details Section */
         .details-section {
             padding: 30px 20px;
         }
@@ -256,7 +255,6 @@
             
         }
 
-        /* Responsive Design */
         @media (min-width: 768px) {
             .product-wrapper {
                 flex-direction: row;

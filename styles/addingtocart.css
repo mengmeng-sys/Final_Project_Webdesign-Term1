@@ -17,7 +17,6 @@
             margin: 0 auto;
         }
 
-        /* Header */
         .header {
             background: white;
             padding: 20px;
@@ -51,7 +50,6 @@
             font-size: 13px;
         }
 
-        /* Layout */
         .cart-layout {
             display: grid;
             gap: 20px;
@@ -69,7 +67,6 @@
             margin-bottom: 20px;
         }
 
-        /* Cart Item */
         .item {
             display: flex;
             gap: 15px;
@@ -144,7 +141,6 @@
             font-size: 18px;
         }
 
-        /* Summary */
         .summary-row {
             display: flex;
             justify-content: space-between;
@@ -177,7 +173,6 @@
             background: #333;
         }
 
-        /* Responsive */
         @media (min-width: 768px) {
             .item-img {
                 width: 120px;
