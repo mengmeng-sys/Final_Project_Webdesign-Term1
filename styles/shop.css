@@ -1,7 +1,13 @@
 *{
  padding: 0;
  margin: 0;
+ box-sizing: border-box;
 }
+
+body {
+  overflow-x: hidden;
+}
+
 .container{
  width: 100%;
  height: auto;
@@ -9,6 +15,15 @@
  display: flex;
  flex-direction: column;
 }
+
+/* Header wrapper to contain notification and nav */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
 .notification-bar{
  display: flex;
  flex-direction: row;
@@ -16,6 +31,7 @@ gap: 6px;
 align-items: center;
 justify-content: center;
 background-color: rgb(162, 162, 162);
+padding: 8px 0;
 }
 .right-a{
  margin-top:15px;
@@ -30,15 +46,20 @@ margin-top: 12px;
  justify-content: center;
  margin-bottom: 12px;
 }
+
+/* STICKY NAVIGATION - DESKTOP */
 .nav-Bar{
  padding-top: 20px;
  padding-bottom: 20px;
- background-color:white;
+ background-color: white;
  display: flex;
  flex-direction: row;
  justify-content: space-around;
  align-items: center;
+ width: 100%;
+ box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
 .logo{
  background-color: rgba(0, 0, 0, 0);
  font-weight: 900;
@@ -160,8 +181,8 @@ margin-bottom: 2em;
   border-radius: 13px;
 }
   #R:focus,#p:focus{
-
-    margin-bottom: 120px;
+    outline: none;
+    border-color: rgb(50, 50, 50);
   }
 .Select-Group-3{
   margin-top: 20px;
@@ -434,12 +455,24 @@ align-items: center;
    padding-bottom: 12px;
   }
 
-  /* Nav */
+  /* STICKY NAVIGATION - MOBILE */
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+  }
+
   .nav-Bar {
     flex-direction: column;
-    margin: 1em 0;
+    margin: 0;
     gap: 10px;
+    padding: 15px 0;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    width: 100%;
   }
+  
   .list-1, .icon-1 {
    display: none;
   }
@@ -451,6 +484,7 @@ align-items: center;
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    margin-right: 0;
     
   }
   .logo img{
@@ -507,8 +541,8 @@ align-items: center;
     width: 100%;
   }
   #R:focus,#p:focus{
-    border-radius: 10px;
-    margin-bottom: 120px;
+    outline: none;
+    border-color: rgb(50, 50, 50);
   }
 
   .block-sell {
@@ -543,7 +577,7 @@ align-items: center;
  }
  .forResponsivenes{
   display: flex;
-  width: 7000px;
+  width: 100%;
   background-color: rgb(189, 189, 189);
   height: 400px;
  }
@@ -604,4 +638,3 @@ align-items: center;
 
 
   }
-
