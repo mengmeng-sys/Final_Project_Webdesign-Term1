@@ -85,6 +85,12 @@ header {
   font-weight: bold;
   color: #333;
 }
+  .nav-right{
+    display: flex;
+    gap:1rem;
+    justify-content: center;
+    align-items: center;
+  }
 nav {
   display: flex;
   gap: 2rem;
@@ -550,6 +556,7 @@ align-items: center;
     gap:1rem;
     justify-content: center;
   }
+
   .search{
     display:none;
   }

@@ -75,6 +75,12 @@ header {
   font-weight: bold;
   color: #333;
 }
+.nav-right{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
 nav {
   display: flex;
   gap: 2rem;

@@ -33,7 +33,15 @@ header {
   font-size: 1.5rem;
   font-weight: bold;
   color: #333;
+  
 }
+.nav-right{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
 nav {
   display: flex;
   gap: 2rem;
@@ -71,6 +79,7 @@ nav a:hover {
   top: 0;
   background-color: white;
 }
+
 
         /* Hero Section */
     .about-hero {
