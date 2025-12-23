@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/info.css">
-    <title>Minimal Stand - Product Page</title>
+    <title id="pageTitle">Product Page</title>
 </head>
 <body>
     <div class="container">
@@ -13,13 +12,11 @@
             <div class="image-section">
                 <a href="shop.html"><button class="back-btn">‹</button></a>
                 
-                <div class="color-selector">
-                    <div class="color-option color-white active" data-color="white"></div>
-                    <div class="color-option color-brown" data-color="brown"></div>
-                    <div class="color-option color-beige" data-color="beige"></div>
+                <div class="color-selector" id="colorSelector">
+                    <!-- Colors will be dynamically loaded -->
                 </div>
 
-                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800" alt="Minimal Stand" class="product-image" id="productImage">
+                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800" alt="Product" class="product-image" id="productImage">
                 
                 <div class="image-dots">
                     <div class="dot active"></div>
@@ -30,10 +27,10 @@
 
             <!-- Details Section -->
             <div class="details-section">
-                <h1 class="product-title" id="productTitle">Minimal Stand</h1>
+                <h1 class="product-title" id="productTitle">Loading...</h1>
                 
                 <div class="price-quantity">
-                    <div class="price" id="productPrice">$ 50</div>
+                    <div class="price" id="productPrice">$ 0.00</div>
                     <div class="quantity-control">
                         <button class="qty-btn" onclick="decreaseQty()">−</button>
                         <span class="quantity" id="quantity">01</span>
@@ -42,13 +39,13 @@
                 </div>
 
                 <div class="rating">
-                    <span class="star">★</span>
-                    <span class="rating-value">4.5</span>
-                    <span class="review-count">(50 reviews)</span>
+                    <span class="star" id="starRating">★★★★★</span>
+                    <span class="rating-value" id="ratingValue">5.0</span>
+                    <span class="review-count" id="reviewCount">(0 reviews)</span>
                 </div>
 
                 <p class="description" id="productDescription">
-                    Minimal Stand is made of by natural wood. The design that is very simple and minimal. This is truly one of the best furnitures in any family for now. With 3 different colors, you can easily select the best match for your home.
+                    Loading product description...
                 </p>
 
                 <div class="action-buttons">
@@ -60,90 +57,6 @@
             </div>
         </div>
     </div>
-
-    <script>
-        let quantity = 1;
-         const timeIn=1;
-        let bookmarked = false;
-        let selectedColor = 'white';
-
-        function increaseQty() {
-            quantity++;
-            if(timeIn>1){
-             cart.addEventListener("click",function(){
-             cart.textContent="Product is added";
-         })
-            }
-            updateQuantity();
-        }
-
-        function decreaseQty() {
-            if (quantity > 1) {
-                quantity--;
-                updateQuantity();
-            }
-        }
-
-        function updateQuantity() {
-            document.getElementById('quantity').textContent = quantity.toString().padStart(2, '0');
-        }
-
-        function toggleBookmark() {
-            bookmarked = !bookmarked;
-            document.getElementById('bookmark-icon').textContent = bookmarked ? '📌' : '🔖';
-        }
-
-        // Color selector functionality
-        document.querySelectorAll('.color-option').forEach(option => {
-            option.addEventListener('click', function() {
-                document.querySelectorAll('.color-option').forEach(o => o.classList.remove('active'));
-                this.classList.add('active');
-                selectedColor = this.getAttribute('data-color');
-            });
-        });
-         const cart = document.getElementById("ch");
-         cart.addEventListener("click",function(){
-             cart.textContent="Product is added";
-             timeIn++;
-         })
-         
-        function addToCart() {
-            // Get product information
-            const product = {
-                name: document.getElementById('productTitle').textContent,
-                price: parseFloat(document.getElementById('productPrice').textContent.replace('$', '').trim()),
-                quantity: quantity,
-                image: document.getElementById('productImage').src,
-                description: document.getElementById('productDescription').textContent.substring(0, 50) + '...',
-                color: selectedColor,
-                id: Date.now() // Unique ID for this cart item
-            };
-
-            // Get existing cart from localStorage
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            
-            // Check if product already exists in cart
-            const existingProductIndex = cart.findIndex(item => 
-                item.name === product.name && item.color === product.color
-            );
-            
-            if (existingProductIndex > -1) {
-                // Update quantity if product exists
-                cart[existingProductIndex].quantity += product.quantity;
-            } else {
-                // Add new product to cart
-                cart.push(product);
-            }
-            
-            // Save cart to localStorage
-            localStorage.setItem('cart', JSON.stringify(cart));
-            
-            // Show success message
-            alert(`Added ${quantity} ${product.name}(s) in ${selectedColor} to cart!`);
-            
-            // Optional: Redirect to cart page
-            // window.location.href = 'Addingtocart.html';
-        }
-    </script>
+    <script src="/js/info_staff.js"></script>
 </body>
 </html>
