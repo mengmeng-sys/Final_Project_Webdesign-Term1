@@ -14,6 +14,7 @@ body {
   overflow-x: hidden;
 }
 
+/* STICKY NOTIFICATION BAR */
 .notification-bar {
   height: 45px;
   background-color: rgb(243, 245, 247);
@@ -23,6 +24,10 @@ body {
   justify-content: center;
   gap: 10px;
   padding: 2px;
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .notification-bar p,
@@ -43,6 +48,7 @@ body {
   text-decoration: underline;
 }
 
+/* STICKY NAVIGATION BAR */
 .navigation-bar {
   height: 60px;
   display: flex;
@@ -50,6 +56,11 @@ body {
   align-items: center;
   padding-left: 10%;
   padding-right: 10%;
+  position: sticky;
+  top: 45px;
+  z-index: 1000;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .toggle {
@@ -113,26 +124,52 @@ body {
   display: none;
 }
 
+.slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: rgba(255, 255, 255, 1);
+}
+
 .nav-arrow {
   z-index: 5;
   background-color: transparent;
-  /* border: none; */
   position: absolute;
   top: 50%;
   left: 2px;
   right: 2px;
-  transform: translateY(-50%); /* This properly centers vertically */
+  transform: translateY(-50%);
   display: flex;
   justify-content: space-between;
 }
 
-.nav-arrow svg,
 .nav-arrow svg {
   height: 40px;
   width: 40px;
   object-fit: fill;
   border-radius: 50%;
   cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.nav-arrow svg:hover {
+  opacity: 0.8;
 }
 
 .hero-text {
@@ -165,6 +202,14 @@ body {
 
 .category {
   position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.category:hover {
+  transform: scale(1.02);
 }
 
 .category-tag {
@@ -188,6 +233,11 @@ body {
 
 .category-tag a {
   color: black;
+  transition: color 0.3s;
+}
+
+.category-tag a:hover {
+  color: #333;
 }
 
 .living-room {
@@ -208,6 +258,7 @@ body {
 .categories img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .new-arrivals {
@@ -226,6 +277,7 @@ body {
   display: flex;
   justify-content: space-between;
 }
+
 .section-header h2 {
   width: auto;
   height: 100%;
@@ -239,6 +291,11 @@ body {
   flex-direction: column;
   justify-content: flex-end;
   padding: 3px;
+  transition: color 0.3s;
+}
+
+.section-header a:hover {
+  color: #555;
 }
 
 .product-grid {
@@ -246,6 +303,25 @@ body {
   display: flex;
   gap: 10px;
   overflow-x: scroll;
+  padding-bottom: 10px;
+}
+
+.product-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.product-grid::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.product-grid::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.product-grid::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .product-card {
@@ -256,6 +332,12 @@ body {
   gap: 5px;
   position: relative;
   flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
 }
 
 .tag {
@@ -264,15 +346,17 @@ body {
   flex-direction: column;
   top: 5px;
   left: 5px;
+  gap: 3px;
 }
 
 .tag span {
   width: 50px;
   height: 24px;
   padding: 2px;
-  font-size: 1.5;
+  font-size: 0.75rem;
   font-weight: 600;
   text-align: center;
+  border-radius: 4px;
 }
 
 .new {
@@ -288,14 +372,15 @@ body {
 .product-card img {
   width: 100%;
   height: auto;
+  border-radius: 8px;
 }
 
-.dereption {
+.decreptoin {
   width: 100%;
   height: 75px;
   display: flex;
   flex-direction: column;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 600;
   color: black;
 }
@@ -335,7 +420,15 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
+
+.service:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
 .service * {
   margin-bottom: 15px;
 }
@@ -349,6 +442,16 @@ body {
   gap: 60px;
 }
 
+.promo-banner img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.promo-text {
+  padding-right: 5%;
+}
+
 .promo-text * {
   margin-bottom: 15px;
 }
@@ -356,9 +459,11 @@ body {
 .promo-text h4 {
   color: blue;
 }
+
 .promo-text h2 {
   font-size: 3rem;
 }
+
 .promo-text p {
   width: 400px;
   line-height: 1.5;
@@ -367,6 +472,11 @@ body {
 .promo-text a {
   color: black;
   font-weight: 500;
+  transition: color 0.3s;
+}
+
+.promo-text a:hover {
+  color: #333;
 }
 
 /* =============footer=================== */
@@ -378,11 +488,13 @@ body {
   background-color: black;
   color: white;
 }
+
 .block1 {
   display: flex;
   flex-direction: row;
   gap: 700px;
 }
+
 .semi-block {
   display: flex;
   flex-direction: row;
@@ -390,13 +502,16 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .sofsogo {
   font-weight: 700;
   font-size: 25px;
 }
+
 .line1 {
   color: rgb(205, 205, 205);
 }
+
 .list-2 {
   margin-left: 1em;
   display: flex;
@@ -404,21 +519,30 @@ body {
   gap: 3em;
   list-style: none;
 }
+
 .list-2 a {
   color: rgb(205, 205, 205);
   text-decoration: none;
   font-size: 16px;
+  transition: color 0.3s;
 }
+
+.list-2 a:hover {
+  color: white;
+}
+
 .linee {
   margin-top: 3.4em;
   border: 0.2px solid rgb(62, 62, 62);
 }
+
 .block2 {
   margin-top: 1em;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
+
 .policy-blo {
   display: flex;
   gap: 1.5em;
@@ -426,22 +550,50 @@ body {
   font-size: 12px;
   margin-right: 790px;
 }
+
 .copyright {
   color: rgb(205, 205, 205);
 }
+
 .af-copyr {
   display: flex;
   gap: 1.5em;
 }
+
 .ico {
   display: flex;
   flex-direction: row;
   gap: 1.2em;
 }
 
+.ico svg {
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.ico svg:hover {
+  transform: scale(1.1);
+}
+
+/* ============ MOBILE RESPONSIVE ============ */
 @media only screen and (max-width: 768px) {
+  
+  /* STICKY NOTIFICATION BAR - MOBILE */
+  .notification-bar {
+    height: 45px;
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+  }
+
+  /* STICKY NAVIGATION BAR - MOBILE */
   .navigation-bar {
     padding: 3%;
+    position: sticky;
+    top: 45px;
+    z-index: 1000;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 
   .toggle {
@@ -453,13 +605,15 @@ body {
     display: none;
   }
 
-  .image-hero {
+  .hero-image {
     width: 90%;
     aspect-ratio: 1/1;
   }
+
   .mobile {
     display: block;
   }
+
   .laptop {
     display: none;
   }
@@ -478,10 +632,12 @@ body {
   .hero-text h1 {
     font-size: 2rem;
   }
+
   .hero-text p {
     font-size: 0.8rem;
     width: 100%;
   }
+
   .categories {
     gap: 0;
     padding: 0;
@@ -493,14 +649,25 @@ body {
     font-size: 1.5rem;
   }
 
+  .category-tag {
+    left: 20px;
+    bottom: 20px;
+  }
+
+  .living-room .category-tag {
+    top: 20px;
+  }
+
   .living-room {
     grid-row: 1/3;
     grid-column: 1/2;
   }
+
   .bedroom {
     grid-row: 3/4;
     grid-column: 1/2;
   }
+
   .kitchen {
     grid-column: 1/2;
     grid-row: 4/5;
@@ -511,7 +678,6 @@ body {
     padding-left: auto;
     padding-right: auto;
     gap: 15px;
-    grid-template-columns: repeat(2, 1fr);
     grid-template-columns: repeat(2, 1fr);
     aspect-ratio: 1/1;
     padding-top: 5%;
@@ -529,22 +695,27 @@ body {
     height: auto;
     width: 70%;
   }
+
   .truck {
     grid-column: 1/2;
     grid-row: 1;
   }
+
   .money {
     grid-row: 1;
     grid-column: 2/3;
   }
+
   .lock {
     grid-column: 1/2;
     grid-row: 2;
   }
+
   .call {
     grid-row: 2;
     grid-column: 2/3;
   }
+
   .promo-banner {
     aspect-ratio: 1/1.8;
     height: auto;
@@ -561,12 +732,13 @@ body {
   .promo-text {
     margin-top: auto;
     margin-bottom: auto;
-    padding: 0 10x;
+    padding: 0 10px;
   }
 
   .promo-text h2 {
     font-size: 2rem;
   }
+
   .promo-text p {
     width: 100%;
   }
@@ -577,7 +749,6 @@ body {
     gap: 30px;
   }
 
-  /* Block1 */
   .block1 {
     flex-direction: column;
     gap: 10px;
@@ -594,24 +765,22 @@ body {
     color: rgb(205, 205, 205);
   }
 
-  /* Footer links list */
   .list-2 {
     flex-direction: column;
     gap: 25px;
     margin-left: 0;
     margin-top: 25px;
   }
+
   .list-2 a {
     font-size: 16px;
   }
 
-  /* Divider line */
   .linee {
     width: 100%;
     margin-top: 35px;
   }
 
-  /* Social Icons */
   .ico {
     justify-content: center;
     margin-top: 30px;
@@ -622,7 +791,6 @@ body {
     height: 35px;
   }
 
-  /* Privacy + Terms */
   .policy-blo {
     flex-direction: column-reverse;
     justify-content: center;
@@ -636,7 +804,6 @@ body {
     justify-content: center;
   }
 
-  /* Copyright */
   .copyright {
     font-size: 14px;
     margin-top: 20px;

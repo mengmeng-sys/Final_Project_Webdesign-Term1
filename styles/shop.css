@@ -27,12 +27,24 @@ body {
 .notification-bar{
  display: flex;
  flex-direction: row;
-gap: 6px;
+gap: 10px;
 align-items: center;
 justify-content: center;
-background-color: rgb(162, 162, 162);
-padding: 8px 0;
+background-color: rgb(243, 245, 247);
+padding: 2px;
+height: 45px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
+
+.notification-bar p {
+  font-size: 1rem;
+}
+
+.notification-bar img {
+  height: 20px;
+  width: 20px;
+}
+
 .right-a{
  margin-top:15px;
 }
@@ -47,6 +59,11 @@ margin-top: 12px;
  margin-bottom: 12px;
 }
 
+.shopn a {
+  color: blue;
+  text-decoration: underline;
+}
+
 /* STICKY NAVIGATION - DESKTOP */
 .nav-Bar{
  padding-top: 20px;
@@ -57,7 +74,7 @@ margin-top: 12px;
  justify-content: space-around;
  align-items: center;
  width: 100%;
- box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .logo{
@@ -65,8 +82,8 @@ margin-top: 12px;
  font-weight: 900;
  font-size: 30px;
  margin-right: 2em;
-
 }
+
 .logo img{
   display: none;
 }
@@ -81,10 +98,20 @@ margin-top: 12px;
  margin-right: 7em;
 }
 .list-1 a{
- color: black;
+ color: rgb(108, 114, 117);
   text-decoration: none;
   font-size: 20px;
+  transition: color 0.3s;
 }
+
+.list-1 a:hover {
+  color: rgb(20, 23, 24);
+}
+
+.list-1 li:first-child a {
+  color: rgb(20, 23, 24);
+}
+
 .icon-1{
   display: flex;
   flex-direction: row;
@@ -94,10 +121,24 @@ margin-top: 12px;
 }
 .icon1{
  width: 34px;
+ cursor: pointer;
+ transition: transform 0.3s;
 }
+
+.icon1:hover {
+  transform: scale(1.1);
+}
+
 .bag{
   width: 70px;
+  cursor: pointer;
+  transition: transform 0.3s;
 }
+
+.bag:hover {
+  transform: scale(1.05);
+}
+
 .body{
   display: flex;
   flex-direction: column;
@@ -179,6 +220,7 @@ margin-bottom: 2em;
   color: rgb(145, 145, 145);
   border: 3px solid rgb(0, 0, 0);
   border-radius: 13px;
+  transition: border-color 0.3s;
 }
   #R:focus,#p:focus{
     outline: none;
@@ -210,7 +252,15 @@ font-weight: 600;
 .btn div{
   padding: 5px;
   border: 2px solid grey;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
 }
+
+.btn div:hover {
+  background-color: #f0f0f0;
+  border-color: #333;
+}
+
 .container-2{
  width: 100%;
  display: flex;
@@ -231,9 +281,17 @@ font-weight: 600;
 }
 .img-item{
   position: relative;
+  overflow: hidden;
+  border-radius: 8px;
 }
+
+.img-item:hover img {
+  transform: scale(1.05);
+}
+
 .img-item img{
   width: 310px;
+  transition: transform 0.3s;
 }
 .avertise{
   position: absolute;
@@ -268,7 +326,14 @@ font-weight: 600;
   display: flex;
   flex-direction: column;
   gap: 5px;
+  cursor: pointer;
+  transition: transform 0.3s;
 }
+
+.item:hover {
+  transform: translateY(-5px);
+}
+
 .star{
   display: flex;
   flex-direction: row;
@@ -298,9 +363,16 @@ font-size: 17px;
   justify-content: center;
   margin-top: 4em;
   margin-bottom: 7em;
-  
-font-weight: 900;
+  font-weight: 900;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 }
+
+.more:hover {
+  background-color: black;
+  color: white;
+}
+
 .last-im{
   position: relative;
   display: flex;
@@ -344,7 +416,14 @@ font-weight: 900;
       font-weight: 700;
     font-size: 17px;
     color: rgb(103, 103, 103);
+    cursor: pointer;
+    transition: color 0.3s;
 }
+
+.su:hover {
+  color: rgb(50, 50, 50);
+}
+
 .sign{
 margin-top: 1.6em;
   display:flex;
@@ -398,7 +477,13 @@ color: white;
  color: rgb(205, 205, 205);
   text-decoration: none;
   font-size: 16px;
+  transition: color 0.3s;
 }
+
+.list-2 a:hover {
+  color: white;
+}
+
 .linee{
   margin-top: 3.4em;
    border: 0.2px solid rgb(62, 62, 62);
@@ -432,6 +517,16 @@ align-items: center;
   gap: 1.2em;
  
 }
+
+.ico svg {
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.ico svg:hover {
+  transform: scale(1.1);
+}
+
 /* ===================== MOBILE RESPONSIVE ===================== */
 @media (max-width: 950px) {
   
