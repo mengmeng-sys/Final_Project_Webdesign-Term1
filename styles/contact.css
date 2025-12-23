@@ -9,9 +9,8 @@
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
-  line-height: 1.6;
-}t
-
+  
+}
 /* Header */
 header {
   background: white;
@@ -34,6 +33,12 @@ header {
   font-size: 1.5rem;
   font-weight: bold;
   color: #333;
+}
+.nav-right{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 nav {
   display: flex;
@@ -331,6 +336,8 @@ footer {
 }
 .privacy {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
 }
 
@@ -358,7 +365,6 @@ footer {
     display: flex;
     gap:1rem;
     justify-content: center;
-    align-items: center;
   }
   .search{
     display:none;
@@ -373,10 +379,8 @@ footer {
     padding-right: 1rem;
   }
   .hamburger{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+    display: block;
+    margin-top: 4px;
   }
   .nav-middle{
      display: none;

@@ -32,14 +32,14 @@
         <a href="./shop.html">Shop</a>
         <a href="./contact.html">Contact Us</a>
         <a href="./aboutus.html">About us</a>
-        <a href="">FAQ</a>
+        <a href="#">FAQ</a>
     
     </nav>
 
-    <div class="nav-right">
+   <div class="nav-right">
       <a href="" class="search"><img src="icon/search-02.svg" /></a> 
       <a href="/signInAndsignup/SignUp3.html" style="color: black;" class="user"><img src="icon/user-circle.svg" /></a>
-      <img src="icon/Cart-Button.svg" />
+      <a href=""><img src="icon/Cart-Button.svg" /></a>
     </div>
   </header>
 
@@ -49,19 +49,20 @@
         <p>Find answers to commonly asked questions about our products and services</p>
         <div class="search-container">
             <input type="text" class="search-box" placeholder="Search for answers...">
-            <span class="search-icon">🔍</span>
+            <span class="search-icon"><img src="icon/search-02.svg"></span>
         </div>
     </section>
 
     <!-- Category Tabs (non-functional) -->
     <section class="category-tabs">
         <div class="tabs-container">
-            <span class="tab-button" style="background: #e0e0e0;">📦 Shipping & Delivery</span>
-            <span class="tab-button">🔄 Returns & Refunds</span>
-            <span class="tab-button">🛋️ Products</span>
-            <span class="tab-button">🛍️ Orders</span>
-            <span class="tab-button">💳 Payment</span>
-            <span class="tab-button">👤 Account</span>
+            <span class="tab-button" style="background: #e0e0e0;">
+                <div class="Ficon"><img src="icon/box-open.svg" width="20px"><span>Shipping & Delivery</span></div> </span>
+            <span class="tab-button"> <div class="Ficon"><img src="icon/restock.svg" alt="" width="20px"><span>Returns & Refunds</span></div></span>
+            <span class="tab-button"><div class="Ficon"><img src="icon/boxes.svg" alt="" width="20px"><span>Products</span></div></span>
+            <span class="tab-button"><div class="Ficon"><img src="icon/order-history.svg" width="20px" alt=""><span>Orders</span></div></span>
+            <span class="tab-button"><div class="Ficon"><img src="icon/credit-card.svg" width="20px" alt=""><span>Payment</span></div></span>
+            <span class="tab-button"><div class="Ficon"><img src="icon/user-circle-1.svg" alt=""><span>Account</span></div></span>
         </div>
     </section>
 
@@ -70,7 +71,7 @@
         <!-- Shipping Category (visible by default) -->
         <div class="faq-category" id="shipping">
             <div class="category-header">
-                <div class="category-icon">📦</div>
+                <div class="category-icon"><img src="icon/box-open.svg" alt="" width="50px" height="50px"></div>
                 <h2 class="category-title">Shipping & Delivery</h2>
                 <p class="category-description">Everything about delivery times, shipping costs, and tracking</p>
             </div>
@@ -122,17 +123,17 @@
             <h2>Quick Help Links</h2>
             <div class="links-grid">
                 <div class="link-card">
-                    <div class="link-icon">📞</div>
+                    <div class="link-icon"><img src="icon/call.svg" alt="" width="50px"></div>
                     <h3>Contact Support</h3>
                     <p>Speak with our team</p>
                 </div>
                 <div class="link-card">
-                    <div class="link-icon">🚚</div>
+                    <div class="link-icon"><img src="icon/truck.svg" width="50px" alt=""></div>
                     <h3>Track Order</h3>
                     <p>Check delivery status</p>
                 </div>
                 <div class="link-card">
-                    <div class="link-icon">🔄</div>
+                    <div class="link-icon"><img src="icon/restock.svg" alt="" width="50px"></div>
                     <h3>Returns</h3>
                     <p>Start a return</p>
                 </div>
@@ -155,40 +156,31 @@
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <div class="footer-brand">
-                <h3>SofaSoGood</h3>
-                <p>Your trusted partner for quality furniture and home decor in Cambodia.</p>
+            <div class="left-top">
+                <span class="logo"> SofaSoGood</span>
+                <a href="#">Gift & Decoration Store</a>
             </div>
-            <div class="footer-links">
-                <h4>Shop</h4>
-                <ul>
-                    <li><a href="#">Sofas</a></li>
-                    <li><a href="#">Beds</a></li>
-                    <li><a href="#">Dining Sets</a></li>
-                    <li><a href="#">Storage</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4>Support</h4>
-                <ul>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Shipping Policy</a></li>
-                    <li><a href="#">Returns</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Showroom</a></li>
-                </ul>
-            </div>
+            <nav class="footer-nav">
+                
+                <a href="./home.html">Home</a>
+                <a href="./shop.html">Shop</a>
+                <a href="#">Contact Us</a>
+            </nav>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 SofaSoGood. All rights reserved.</p>
+                <div class="footer-links">
+                    <p>Copyright © 2024 - All rights reserved</p>
+                    <div class="privacy">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Use</a>
+                    </div>   
+                </div>
+            
+            <div class="social-icons">
+                <a href="#"><img src="icon/instagram.svg" alt=""></a>
+                <a href="#"><img src="icon/facebook.svg" alt=""></a>
+                <a href="#"><img src="icon/youtube.svg" alt=""></a>
+            </div>
         </div>
     </footer>
 </body>
