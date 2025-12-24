@@ -341,8 +341,10 @@
         const cart = document.getElementById("ch");
         cart.addEventListener("click", function() {
             cart.textContent = "Product is added ✓";
+            cart.style.backgroundColor="green"
             setTimeout(() => {
                 cart.textContent = "Add to cart";
+                cart.style.backgroundColor="black"
             }, 2000);
         });
          

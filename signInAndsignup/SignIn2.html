@@ -1,35 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link rel="stylesheet" href="/styles/SigninPage.css">
- <title>Sign In</title>
-</head>
-<body>
- <div class="container">
-   <div class="left-side">
-      <img src="/image/living-room-item/Left.png" alt="">
-      <div class="back">
-       <a href="/home.html"><img src="/icon/left-arrow-circle.svg" alt=""></a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/SigninPage.css" />
+    <title>Sign In</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-side">
+        <img src="/image/living-room-item/Left.png" alt="" />
+        <div class="back">
+          <a href="/home.html"
+            ><img src="/icon/left-arrow-circle.svg" alt=""
+          /></a>
+        </div>
       </div>
-   </div>
-   <div class="right-side">
-    <div class="head"> Sign In</div>
-    <div class="to-in">Don't have an account? <a href="/signInAndsignup/SignUp2.html">Sign Up</a></div>
-    <form class="f">
-        
-          <input type="text" id="email" placeholder="Email address or Username">
-          <input type="password" id="password" placeholder="Password">
-          <a href="/forgot_password.html" style="text-decoration: none;"> Forgot Password ?</a>
+      <div class="right-side">
+        <div class="head">Sign In</div>
+        <div class="to-in">
+          Don't have an account?
+          <a href="SignUp2.html">Sign Up</a>
+        </div>
+        <form class="f">
+          <input
+            type="text"
+            id="email"
+            placeholder="Email address or Username"
+            required
+          />
+          <input 
+            type="password" 
+            id="password" 
+            placeholder="Password"
+            required
+          />
+          <a href="../forgot_password.html" style="text-decoration: none">
+            Forgot Password ?</a
+          >
           <div class="check">
-                 <input type="checkbox" class="checkbox" id="checkbox">
-                 <p>I agree with <strong>Privacy Policy</strong> and <strong>Term of Use</strong></p>
+            <input type="checkbox" class="checkbox" id="checkbox" required />
+            <p>
+              I agree with <strong>Privacy Policy</strong> and
+              <strong>Term of Use</strong>
+            </p>
           </div>
           <div class="signU">Sign In</div>
-    </form>
+        </form>
+      </div>
+    </div>
 
-   </div>
- </div>
-</body>
+    <script>
+      document.querySelector(".signU").addEventListener("click", function () {
+        const emailOrUsername = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
+        const agree = document.getElementById("checkbox").checked;
+
+        console.log(" STEP 1: User clicked Sign In");
+        console.log("Input email/username:", emailOrUsername);
+        console.log("Input password:", password);
+        console.log("Password length:", password.length);
+        console.log("Checkbox checked:", agree);
+
+        if (!emailOrUsername || !password) {
+          alert("Please enter email/username and password");
+          return;
+        }
+
+        if (!agree) {
+          alert("You must agree to Privacy Policy and Terms");
+          return;
+        }
+
+        console.log(" STEP 2: Checking localStorage...");
+        const userString = localStorage.getItem("user");
+        console.log("Raw user string:", userString);
+        
+        if (!userString) {
+          alert("No account found. Please sign up first.");
+          return;
+        }
+
+        const savedUser = JSON.parse(userString);
+        console.log("Parsed user object:", savedUser);
+
+        console.log(" STEP 3: Comparing credentials...");
+        console.log("Saved email:", savedUser.email);
+        console.log("Saved username:", savedUser.username);
+        console.log("Saved password:", savedUser.password);
+        console.log("Saved password length:", savedUser.password.length);
+        
+        const emailMatch = emailOrUsername === savedUser.email;
+        const usernameMatch = emailOrUsername === savedUser.username;
+        const passwordMatch = password === savedUser.password;
+        
+        console.log(" Email matches:", emailMatch);
+        console.log(" Username matches:", usernameMatch);
+        console.log(" Password matches:", passwordMatch);
+
+        if ((emailMatch || usernameMatch) && passwordMatch) {
+          console.log(" LOGIN SUCCESS! ");
+          localStorage.setItem("isLoggedIn", "true");
+          alert("Login successful!");
+          window.location.href = "../account_info.html";
+        } else {
+          console.log(" LOGIN FAILED!");
+          console.log("Reason:");
+          if (!emailMatch && !usernameMatch) {
+            console.log("- Email/Username doesn't match");
+          }
+          if (!passwordMatch) {
+            console.log("- Password doesn't match");
+            console.log("  You typed:", password);
+            console.log("  Should be:", savedUser.password);
+          }
+          alert("Invalid email/username or password");
+        }
+      });
+    </script>
+    <script src="../header-auth.js"></script>
+  </body>
 </html>

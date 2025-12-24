@@ -18,12 +18,7 @@ body {
 }
 
 /* Header wrapper to contain notification and nav */
-.header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  width: 100%;
-}
+
 
 .notification-bar{
  height: 45px;
@@ -374,6 +369,7 @@ font-size: 17px;
 }
 
 .last-im{
+  
   position: relative;
   display: flex;
   flex-direction: row;

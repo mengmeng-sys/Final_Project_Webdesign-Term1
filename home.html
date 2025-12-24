@@ -15,38 +15,43 @@
     </div>
     <!-- Navigation Bar -->
     <header class="navigation-bar">
-    
-    <div class="nav-left">
-        <div class="hamburger"><a style="text-decoration: none; color: black" href="MenuPage3.html">
+      <div class="nav-left">
+        <span class="toggle"
+          ><a style="color: black" href="MenuPage2.html">
             <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="26"
-            height="26"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fill="currentColor"
-              d="M15 4H1V2h14zm0 5H1V7h14zM1 14h14v-2H1z"
-            />
-          </svg>
-        </a></div>
-          <div class="logo">SofaSoGood</div>
-    </div>
-    <nav class="nav-middle">
-        <a href="./home.html">Home</a>
-        <a href="./shop.html">Shop</a>
-        <a href="./contact.html">Contact Us</a>
-        <a href="./aboutus.html">About us</a>
-        <a href="./FAQ.html">FAQ</a>
-    
-    </nav>
+              xmlns="http://www.w3.org/2000/svg"
+              width="26"
+              height="26"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill="currentColor"
+                d="M15 4H1V2h14zm0 5H1V7h14zM1 14h14v-2H1z"
+              />
+            </svg>
+          </a>
+        </span>
+        <span>SofaSoGood</span>
+      </div>
 
-    <div class="nav-right">
-      <a href="" class="search"><img src="icon/search-02.svg" /></a> 
-      <a href="/signInAndsignup/SignUp2.html" style="color: black;" class="user"><img src="icon/user-circle.svg" /></a>
-      <a href=""><img src="icon/Cart-Button.svg" /></a>
-    </div>
-  </header>
+      <nav class="nav-middle">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="FAQ.html">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-right">
+        <img class="hide-mobile" src="icon/search-02.svg" />
+        <a href="signInAndsignup/SignIn2.html" id="user-icon-link"
+          ><img class="hide-mobile" src="icon/user-circle.svg"
+        /></a>
+        <img src="icon/Cart-Button.svg" />
+      </div>
+    </header>
 
     <!-- Hero / Slider Section -->
     <section class="hero-section">
@@ -722,7 +727,8 @@
           </svg>
         </div>
       </div>
-      
     </footer>
+    
+    <script src="header-auth.js"></script>
   </body>
 </html>

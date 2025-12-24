@@ -1,46 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Sign Up</title>
-<link rel="stylesheet" href="/styles/SignUp.css">
-</head>
-<body>
- <div class="container">
-   <div class="left-side">
-      <img src="/image/living-room-item/Left.png" alt="Interior Design">
-      <div class="back">
-       <a href="/home.html">
-         <img src="/icon/left-arrow-circle.svg" alt="Back">
-       </a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/styles/SignUp.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-side">
+        <img src="/image/living-room-item/Left.png" alt="Interior Design" />
+        <div class="back">
+          <a href="/home.html">
+            <img src="/icon/left-arrow-circle.svg" alt="Back" />
+          </a>
+        </div>
       </div>
-   </div>
-   <div class="right-side">
-    <div class="head">Sign Up</div>
-    <div class="to-in">Already have an account? <a href="/signInAndsignup/SignIn2.html">Sign In</a></div>
-    <form class="f">
+      <div class="right-side">
+        <div class="head">Sign Up</div>
+        <div class="to-in">
+          Already have an account?
+          <a href="/signInAndsignup/SignIn2.html">Sign In</a>
+        </div>
+        <form class="f">
           <div class="input-group">
-            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="text" id="name" placeholder="Your Name" required />
           </div>
           <div class="input-group">
-            <input type="text" id="username" placeholder="Username" required>
+            <input type="text" id="username" placeholder="Username" required />
           </div>
           <div class="input-group">
-            <input type="email" id="email" placeholder="Email address" required>
+            <input
+              type="email"
+              id="email"
+              placeholder="Email address"
+              required
+            />
           </div>
           <div class="input-group">
-            <input type="password" id="password" placeholder="Password" required minlength="8">
+            <input
+              type="password"
+              id="password"
+              placeholder="Password"
+              required
+              minlength="8"
+            />
           </div>
           <div class="check">
-                 <input type="checkbox" class="checkbox" id="checkbox" required>
-                 <p>I agree with <strong>Privacy Policy</strong> and <strong>Terms of Use</strong></p>
+            <input type="checkbox" class="checkbox" id="checkbox" required />
+            <p>
+              I agree with <strong>Privacy Policy</strong> and
+              <strong>Terms of Use</strong>
+            </p>
           </div>
-         <a href="/account_info.html" style="text-decoration: none; color:rgb(255, 255, 255)">
-  <button type="button" class="signU">Sign Up</button>
-</a>
-    </form>
-   </div>
- </div>
-</body>
+          <!--  CHANGED: Removed the <a> tag wrapper, made button handle everything -->
+          <button type="button" class="signU">Sign Up</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      document.querySelector(".signU").addEventListener("click", function () {
+        // Get all form values
+        const name = document.getElementById("name").value.trim();
+        const username = document.getElementById("username").value.trim(); // ✅ ADDED
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
+        const agree = document.getElementById("checkbox").checked;
+
+        // Validate all fields
+        if (!name || !username || !email || !password) { //  ADDED username check
+          alert("Please fill all fields");
+          return;
+        }
+
+        if (!agree) {
+          alert("You must agree to Privacy Policy and Terms");
+          return;
+        }
+
+        // Create user object with ALL data including username
+        const user = {
+          name,
+          username,  // ADDED - This was missing before!
+          email,
+          password,
+        };
+
+        // Save to localStorage
+        localStorage.setItem("user", JSON.stringify(user));
+        localStorage.setItem("isLoggedIn", "true");
+
+        // CHANGED: Fixed redirect path
+        window.location.href = "../account_info.html";
+      });
+    </script>
+    <script src="../header-auth.js"></script>
+  </body>
 </html>
